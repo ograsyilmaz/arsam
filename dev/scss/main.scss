@@ -1,0 +1,23 @@
+// Base
+@import "base/variables";
+@import "base/mixins";
+@import "base/normalize";
+@import "base/classes";
+@import "base/typography";
+
+// Layout
+@import "layouts/layout";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/navbar";
+@import "layouts/responsive";
+
+//Home
+@import "layouts/Home/adws-search";
+@import "layouts/Home/wht-influencer";
+@import "layouts/Home/wht-work";
+@import "layouts/Home/content-creat";
+
+//Promotion
+
+@import "layouts/Promotion/promotions";
