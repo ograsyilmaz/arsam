@@ -1,34 +1,3 @@
-/* 
-
-Gulp eklenti tanimlamalari 
-
-@sass 
-sass dosyalarini css'e cevirir.
-
-@uglifiy_js
-js dosyalarini minify eder.
-
-@file_include
-html leri ayristirip moduler bir yapi olusturur.
-
-@concat_css
-css dosyalarını birlestirir.
-
-@concat 
-js dosyalarini birlestirir.
-
-@minify_css
-css dosyalarini minify eder.
-
-@rename
-dosyalari yeniden isimlendirebilmemize olanak saglar.  
-
-@htmlmin
-html dosyalarını minify etmeye yarar, js kodundaki kırılımlar olmadığı sürece tek satıra indirir
-
-
-*/
-
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
     uglify_js = require("gulp-uglifyjs"),
@@ -39,32 +8,29 @@ var gulp = require("gulp"),
     minify_css = require("gulp-minify-css"),
     rename = require("gulp-rename"),
     htmlmin = require('gulp-htmlmin'),
-    // browserSync = require('browser-sync').create()
     image = require('gulp-image');
 
 
 
-/* 
-
-Assets (assets) klasorunde urun ortamina hazir sekilde yapilandirilmis klasorler ve dosyalar bulunur.
-Dev (dev) klasorunde projenin yapilandirilandigi klasorler ve dosyalar bulunur.
-
-*/
 
 var public_dir = "public/",
     assets_dir = public_dir + "assets/",
     assets_css_dir = public_dir + "assets/css/",
     assets_js_dir = public_dir + "assets/js/",
     assets_img_dir = public_dir + "assets/img/",
+    assets_font_dir = public_dir + "assets/font/",
     dev_dir = "dev/",
     dev_js_dir = "dev/js/",
     dev_layouts_dir = "dev/layouts/",
     dev_pages_dir = "dev/pages/",
+    dev_font_dir = "dev/font/",
     dev_scss_dir = "dev/scss/",
     dev_img_dir = "dev/img/**",
     dev_scss_sub_dir = "dev/scss/*/",
+
     dev_vendor_dir = "dev/vendor/";
 dev_scss_sub_dir_watch = "dev/scss/**/",
+
 
 
 
@@ -217,6 +183,14 @@ gulp.task('file_include', function () {
 });
 
 
+gulp.task('fonts', function () {
+    return gulp.src([
+            dev_font_dir + "*"
+        ])
+        .pipe(gulp.dest(assets_font_dir));
+});
+
+
 /* 
 
 Degisiklik yapildikca calisacak gorevler
@@ -268,4 +242,6 @@ Gorev VII (file_include)
 
 */
 
-gulp.task("default", ["watch", "sass", "minify_js", "plugins_js", "plugins_css", "bootstrap", "file_include", "image"]);
+
+
+gulp.task("default", ["watch", "sass", "minify_js", "plugins_js", "fonts","plugins_css", "bootstrap", "file_include", "image"]);
