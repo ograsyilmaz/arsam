@@ -1,49 +1,75 @@
-<div class="container">
-    <div class="row">
-        <div class="menu">
-            <div class="col-lg-2">
-                <div class="menu_logo">
-                    <a href=""><img src="assets/img/logo.svg" alt=""></a>
+<div class="header">
+
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-md-3">
+                <div class="header_logo">
+                    <img src="assets/img/logo.svg" class="header_logo--img " alt="">
+
                 </div>
+
+
             </div>
-            <div class="col-lg-6">
-                <nav class="menu_items menu_items--right">
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>KURUMSAL</p>
-                        </a>
-                    </div>
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>NASIL ÇALIŞIR</p>
-                        </a>
-                    </div>
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>BÖLGELER</p>
-                        </a>
-                    </div>
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>MERAK ETTİKLERİNİZ</p>
-                        </a>
-                    </div>
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>I</p>
-                        </a>
-                    </div>
-                    <div class="menu_link">
-                        <a href="#">
-                            <p>İCON</p>
-                        </a>
-                    </div>
-                </nav>
+            <div class="header_hamburger">
+                <img src="assets/img/hamburger-icon.svg" class="header_hamburger--img" alt="">
+            </div>
+
+            <div class="col-md-9">
+                <div class="header_menu">
+                    <ul class="header_menu_items">
+                        <li class="header_menu_item"><a href="" class="header_menu_item_link">KURUMSAL <img src="assets/img/arrow-icon.svg"
+                                    class="header_menu--arrowsvg" alt=""></a>
+                            <div class="header_menu_sub">
+                                <ul class="header_menu_sub_items">
+                                    <li class="header_menu_sub_item">
+                                        <p>HAKKIMIZDA</p>
+                                        <p>En risksiz yatırım biri</p>
+                                        <p>araçlarından biri arsadır</p>
+                                    </li>
+                                    <li class="header_menu_sub_item">
+                                        <p>MÜŞTERİ POLİTİKAMIZ</p>
+                                        <p>En risksiz yatırım biri</p>
+                                        <p>arsadır. Arsamolsun.Com</p>
+                                    </li>
+                                    <li class="header_menu_sub_item">
+                                        <p>DEĞERLERİMİZ</p>
+                                        <p>En risksiz yatırım biri</p>
+                                        <p>arsadır. ArsamOlsun</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="header_menu_item"><a href="" class="header_menu_item_link">NASIL ÇALIŞIR</a></li>
+                        <li class="header_menu_item"><a href="" class="header_menu_item_link">BÖLGELER</a></li>
+                        <li class="header_menu_item"><a href="" class="header_menu_item_link">MERAK ETTİKLERİNİZ</a></li>
+                        <li class="header_menu_item header_menu_item--hrline"><a href="" class="header_menu_item_link ">
+                                <img src="assets/img/search-icon.svg" class="header_menu--searchsvg" alt=""></a></li>
+                    </ul>
+                </div>
+
+
             </div>
 
         </div>
     </div>
 
 </div>
-</div>
-</div>
+
+
+<script>
+    $(document).ready(function () {
+        $('.header_hamburger img').on('click', function () {
+
+            if ($(".header_menu").hasClass('header_hamburger-display')) {
+
+
+                $(".header_menu").removeClass('header_hamburger-display');
+            } else {
+
+
+                $(".header_menu").addClass('header_hamburger-display');
+            }
+        });
+    });
+</script>

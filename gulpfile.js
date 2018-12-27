@@ -48,6 +48,7 @@ dev_scss_sub_dir_watch = "dev/scss/**/",
                 compatibility: 'ie8'
             }))
             .pipe(sass().on('error', sass.logError))
+            
             .pipe(rename('main.min.css'))
             .pipe(gulp.dest(assets_css_dir));
 

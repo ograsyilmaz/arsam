@@ -1,24 +1,144 @@
-.menu {
-    background-color: $main-color;
-     display: flex;
-    padding: 16px;
-    font-family: $second-font;
-    color: $menu_text--color;
-    font-weight: 500;
-    font-style: normal;
+.header {
+    &_menu {
 
-    &_items {
-        display: flex;
+        &_sub {
+            position: absolute;
+            top: 52px;
+            left: 93px;
+
+            &_items {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+
+
+            }
+
+            &_item {
+                margin-left: 40px;
+            }
+        }
+
+
+        &--searchsvg {
+            width: 25px;
+            height: 19px;
+
+        }
+
+        &--arrowsvg {
+            width: 15px;
+            height: 8px;
+            margin-left: 12px;
+
+        }
+
+
+
+        &_item {
+            padding-right: 15px;
+
+            &--hrline {
+                border-left: 1px solid #cdd0d2;
+                padding-left: 15px;
+            }
+
+            &_link {
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+            }
+        }
+
+        &_items {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    &_hamburger {
+
+
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        position: absolute;
 
     }
 
-    &_items--right {
-        margin-left: auto;
+    &_logo {
+        &--img {
+            width: 15em;
+            // width: 75%;
+            // height: 86px;
+        }
+    }
+}
 
+.header_hamburger-display {
+    display: flex !important;
+
+}
+
+
+@media screen and (min-width: 769px) {
+
+
+    .header_hamburger {
+        display: none;
     }
 
-    &_link {
-        padding-right: 8px;
-    }
+    .header_hamburger-display {
+        display: block !important;
 
+    }
+}
+
+@include responsive(768) {
+    .header {
+        &_menu {
+            display: none;
+            position: absolute;
+            top: 57px;
+            left: 20vw;
+
+            &_sub { 
+                position: initial;
+
+                &_item {
+                    margin: 7px;
+                }
+
+                &_items {
+                    display: flex;
+                    flex-flow: column;
+                    justify-content: normal;
+                    align-items: normal;
+                    margin: 10px;
+                }
+            }
+
+            &_items {
+                flex-direction: column;
+                // position: absolute;
+                // margin: 0 auto;
+                align-items: normal
+            }
+
+            &_item {}
+        }
+
+        &_logo {
+            &--img {
+                // width: 40%;
+            }
+        }
+    }
 }
